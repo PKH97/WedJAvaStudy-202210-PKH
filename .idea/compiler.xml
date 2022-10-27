@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="JavaStudy202210_PKH" />
+        <module name="WedJAvaStudy-202210-PKH" />
       </profile>
     </annotationProcessing>
   </component>
