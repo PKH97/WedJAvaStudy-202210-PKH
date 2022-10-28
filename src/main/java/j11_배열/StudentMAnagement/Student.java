@@ -24,6 +24,14 @@ public class Student {
         calculation();
     }
 
+    public void updateStudent(Student updateStudent){
+        this.kor = updateStudent.kor;
+        this.eng = updateStudent.eng;
+        this.math = updateStudent.math;
+
+        calculation();
+    }
+
     private void calculation(){ // -> 순서대로 입력해 준다.
         setTotalScore();
         setAvgScore();
@@ -62,4 +70,7 @@ public class Student {
 
     }
 
+    public String getName() {
+        return name;
+    }
 }

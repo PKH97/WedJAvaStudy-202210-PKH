@@ -5,8 +5,8 @@ package j11_배열.StudentMAnagement;
 public class StudentRepository {
     private Student[] students; // -> 학생'들'을 저장 할 수 있는 배열
 
-    public void addStudent(){
-       students = new Student[0];
+    public StudentRepository(){
+        students = new Student[0];
     }
 
     public void addStudent(Student student){
@@ -15,7 +15,6 @@ public class StudentRepository {
         if(index == -1){
             index = increaseArray();
         }
-
         students[index] = student;
     }
 
@@ -32,11 +31,41 @@ public class StudentRepository {
     private int increaseArray(){
         Student[] tempArray = new Student[students.length + 1]; // 임시Array
         for(int i = 0; i< students.length; i++){
-            tempArray[1] = students[i];
+            tempArray[i] = students[i];
         }
         students = tempArray;
 
-        return tempArray.length -1;
+        return students.length -1;
     }
 
+    public Student[] getStudents(){
+        return students;
+    }
+
+    public int findStudentByName(String name){
+        for(int i = 0; i < students.length; i++){
+            if(students [i] != null){
+                if(students[i].getName().equals(name)){
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+
+    public Student getStudent(int index){
+        return students[index];
+    }
+
+    public Student removeStudent(int index){
+        Student student = students[index]; // student에 학생정보를 넣음
+        students[index] = null; // index안의 학생정보를 삭제
+        return student;
+    }
+
+    public Student updateStudent(int index, Student updateStudent){
+        Student student = students[index];
+        student.updateStudent(updateStudent);
+        return student;
+    }
 }
