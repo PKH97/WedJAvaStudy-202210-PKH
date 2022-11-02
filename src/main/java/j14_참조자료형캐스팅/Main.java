@@ -10,12 +10,17 @@ public class Main {
         LED led = new LED();
         Speaker speaker = new Speaker();
 
-        CentralControl centralControl = new CentralControl(led, speaker, computer3);
+        CentralControl centralControl = new CentralControl(new Power[5]);
+
+        centralControl.addDevice(computer1);
+        centralControl.addDevice(speaker);
+        centralControl.addDevice(computer2);
+        centralControl.addDevice(computer3);
+        centralControl.addDevice(led);
 
         centralControl.powerOn();
         System.out.println("-------------------------------");
         centralControl.powerOff();
-
 
     }
 }
