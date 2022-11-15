@@ -28,7 +28,9 @@ public class CollectionForEach {
                 System.out.println(name);
             }
         };
-        Consumer<String> consumer = name -> {System.out.println(name);};
+        Consumer<String> consumer = name -> {
+            System.out.println(name);
+        };
 
         for(String name : Objects.requireNonNull(list)) {
             consumer.accept(name);
